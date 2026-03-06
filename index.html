@@ -2,25 +2,85 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <title>Vadex Live</title>
-  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+<meta charset="utf-8">
+<title>AR Navigation Demo</title>
+
+<script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+
 </head>
 
 <body>
-  <a-scene>
-   <a-assets>
-    <img id="my-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaZmeOksRY9Rb1FHxPk1FYqP2cc5uGiFXVSg&s">
-  </a-assets>
 
-  <!-- Using the asset management system. -->
-  <a-image src="#my-image"></a-image>
+<a-scene>
 
-  
+<!-- Sky -->
+<a-sky color="#0a0a0a"></a-sky>
 
+<!-- Ground -->
+<a-plane position="0 -1 -4"
+rotation="-90 0 0"
+width="20"
+height="20"
+color="#7BC8A4">
+</a-plane>
 
-  </a-scene>
+<!-- Navigation path arrows -->
+
+<a-cone position="0 0 -3"
+radius-bottom="0.3"
+height="0.7"
+rotation="0 0 180"
+color="yellow"
+animation="property: position; to: 0 0 -5; loop: true; dur: 2000">
+</a-cone>
+
+<a-cone position="0 0 -6"
+radius-bottom="0.3"
+height="0.7"
+rotation="0 0 180"
+color="yellow">
+</a-cone>
+
+<a-cone position="0 0 -9"
+radius-bottom="0.3"
+height="0.7"
+rotation="0 0 180"
+color="yellow">
+</a-cone>
+
+<!-- Destination marker -->
+
+<a-cylinder position="0 0 -12"
+height="3"
+radius="1"
+color="red">
+</a-cylinder>
+
+<!-- Info board -->
+
+<a-text
+value="Destination: Library"
+position="0 4 -12"
+align="center"
+color="white"
+width="10">
+</a-text>
+
+<!-- Title -->
+
+<a-text
+value="AR Navigation System"
+position="0 6 -6"
+align="center"
+color="white"
+width="12">
+</a-text>
+
+<!-- Camera -->
+
+<a-camera position="0 1.6 5"></a-camera>
+
+</a-scene>
+
 </body>
-
 </html>
-
