@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>AR Navigation Demo</title>
+<title>CUSAT Campus AR Navigation</title>
 
 <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 
@@ -13,74 +13,194 @@
 
 <a-scene>
 
-<!-- Sky -->
-<a-sky color="#0a0a0a"></a-sky>
+<!-- DAYTIME SKY -->
+<a-sky color="#87CEEB"></a-sky>
 
-<!-- Ground -->
-<a-plane position="0 -1 -4"
-rotation="-90 0 0"
-width="20"
-height="20"
-color="#7BC8A4">
+<!-- LIGHTING -->
+<a-light type="ambient" intensity="0.9"></a-light>
+<a-light type="directional" position="3 6 2" intensity="1.2"></a-light>
+
+<!-- GRASS GROUND -->
+<a-plane rotation="-90 0 0"
+width="200"
+height="200"
+color="#4CAF50"
+position="0 -1 -40">
 </a-plane>
 
-<!-- Navigation path arrows -->
+<!-- MAIN ROAD -->
+<a-box position="0 -0.95 -25"
+width="8"
+height="0.05"
+depth="80"
+color="#555">
+</a-box>
 
-<a-cone position="0 0 -3"
-radius-bottom="0.3"
-height="0.7"
+<!-- SIDE ROADS -->
+<a-box position="-20 -0.95 -25"
+width="6"
+height="0.05"
+depth="40"
+color="#666">
+</a-box>
+
+<a-box position="20 -0.95 -25"
+width="6"
+height="0.05"
+depth="40"
+color="#666">
+</a-box>
+
+<!-- NAVIGATION ARROWS -->
+
+<a-cone position="0 -0.4 -10"
+radius-bottom="0.4"
+height="1"
 rotation="0 0 180"
 color="yellow"
-animation="property: position; to: 0 0 -5; loop: true; dur: 2000">
+material="emissive: yellow"
+animation="property: position; to: 0 -0.4 -14; dur: 1500; loop: true">
 </a-cone>
 
-<a-cone position="0 0 -6"
-radius-bottom="0.3"
-height="0.7"
+<a-cone position="0 -0.4 -18"
+radius-bottom="0.4"
+height="1"
 rotation="0 0 180"
-color="yellow">
+color="yellow"
+material="emissive: yellow"
+animation="property: position; to: 0 -0.4 -22; dur: 1500; loop: true">
 </a-cone>
 
-<a-cone position="0 0 -9"
-radius-bottom="0.3"
-height="0.7"
+<a-cone position="0 -0.4 -26"
+radius-bottom="0.4"
+height="1"
 rotation="0 0 180"
-color="yellow">
+color="yellow"
+material="emissive: yellow"
+animation="property: position; to: 0 -0.4 -30; dur: 1500; loop: true">
 </a-cone>
 
-<!-- Destination marker -->
+<!-- LIBRARY BUILDING -->
 
-<a-cylinder position="0 0 -12"
-height="3"
-radius="1"
-color="red">
-</a-cylinder>
-
-<!-- Info board -->
+<a-box position="-15 3 -20"
+width="12"
+height="6"
+depth="10"
+color="#d9d9d9">
+</a-box>
 
 <a-text
-value="Destination: Library"
-position="0 4 -12"
+value="CUSAT Library"
+position="-15 7 -20"
 align="center"
-color="white"
-width="10">
+color="black"
+width="40">
 </a-text>
 
-<!-- Title -->
+<!-- LECTURE HALL -->
+
+<a-box position="15 3 -20"
+width="12"
+height="6"
+depth="10"
+color="#cccccc">
+</a-box>
 
 <a-text
-value="AR Navigation System"
-position="0 6 -6"
+value="Lecture Hall Complex"
+position="15 7 -20"
 align="center"
-color="white"
-width="12">
+color="black"
+width="40">
 </a-text>
 
-<!-- Camera -->
+<!-- ADMIN BLOCK -->
 
-<a-camera position="0 1.6 5"></a-camera>
+<a-box position="-25 4 -40"
+width="10"
+height="8"
+depth="10"
+color="#bfbfbf">
+</a-box>
+
+<a-text
+value="Administration Block"
+position="-25 10 -40"
+align="center"
+color="black"
+width="40">
+</a-text>
+
+<!-- STUDENT CENTER -->
+
+<a-box position="25 4 -40"
+width="10"
+height="8"
+depth="10"
+color="#bfbfbf">
+</a-box>
+
+<a-text
+value="Student Centre"
+position="25 10 -40"
+align="center"
+color="black"
+width="40">
+</a-text>
+
+<!-- DESTINATION BUILDING -->
+
+<a-box
+position="0 6 -60"
+width="20"
+height="12"
+depth="12"
+color="#e63946"
+animation="property: rotation; to: 0 360 0; loop: true; dur: 8000">
+</a-box>
+
+<a-text
+value="Destination: Computer Science Block"
+position="0 14 -60"
+align="center"
+color="black"
+width="60">
+</a-text>
+
+<!-- TREES -->
+
+<a-cylinder position="-35 0 -20" radius="0.4" height="5" color="#8b5a2b"></a-cylinder>
+<a-sphere position="-35 4 -20" radius="3" color="green"></a-sphere>
+
+<a-cylinder position="35 0 -20" radius="0.4" height="5" color="#8b5a2b"></a-cylinder>
+<a-sphere position="35 4 -20" radius="3" color="green"></a-sphere>
+
+<a-cylinder position="-35 0 -40" radius="0.4" height="5" color="#8b5a2b"></a-cylinder>
+<a-sphere position="-35 4 -40" radius="3" color="green"></a-sphere>
+
+<a-cylinder position="35 0 -40" radius="0.4" height="5" color="#8b5a2b"></a-cylinder>
+<a-sphere position="35 4 -40" radius="3" color="green"></a-sphere>
+
+<!-- TITLE -->
+
+<a-text
+value="CUSAT Campus AR Navigation System"
+position="0 15 -15"
+align="center"
+color="black"
+width="80">
+</a-text>
+
+<!-- CAMERA -->
+
+<a-camera
+position="0 1.6 5"
+wasd-controls
+look-controls>
+</a-camera>
 
 </a-scene>
 
 </body>
+
 </html>
